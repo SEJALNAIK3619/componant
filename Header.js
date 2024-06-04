@@ -14,7 +14,7 @@ return(
             <Link to ="services">Services</Link>
             </li>
             <li>
-            <Link to ="Product">Product</Link>
+            <Link to ="Products">Products</Link>
             </li>
             <li>
             <Link to ="Aboutus">About Us</Link>
@@ -31,9 +31,6 @@ return(
             <li>
             <Link to ="Page404">Login</Link>
             </li>
-            {/* <li>
-            <Link to ="Login">Login</Link>
-            </li> */}
             
         </ul>
     </nav>

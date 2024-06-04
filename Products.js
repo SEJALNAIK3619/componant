@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-export default function SingleProduct(){
-
-    var {name} = useParams();
+export default function Products(){
+  var nav = useNavigate();
     var data = [
         {
           product_name: "Office chair",
@@ -48,33 +47,25 @@ export default function SingleProduct(){
           product_image: "https://websyinfotech.com/Orphnage/images/glass.jpg"
         }
     ];
-    
-    var product=data.filter(value=>value.product_name == name);
-    console.log(name);
-    
     return (
-            
-            <> 
-            
-            <div classname="single-product-container">
-                {
-                    product.map((value)=>(
-                    <>
-                               <div className="single-product-image">
-                                <img src={value.product_image}/>
-                                
-                                <div>
+            <>
+            <h2 align="center">Product Component</h2>
+            <div className="container1">
+              <div className="box1">
+              <div className="box2">
+            {
+              data.map((value)=>(
+                <>
+                 <div onClick={()=>nav(`/Singleproduct/${value.product_name}`)}>
+                 <img src={value.product_image}/> 
+                  <h3>{value.product_name}</h3>
+                  <h3>{value.product_price}</h3>
+                 </div>
+                </>
+              ))
+            }
+            </div></div></div>
+            </>
+            );
 
-                                <h3>Name{value.product_name}</h3>
-                                <h4>Price{value.product_price}</h4>
-                                <h4>Category{value.product_category}</h4>
-                            </div></div>
-                      </>
-                        ))
-                    }
-
-                        </div>
-                    
-                   </>
-    );
 }
